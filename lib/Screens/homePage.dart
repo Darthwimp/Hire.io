@@ -1,3 +1,4 @@
+import 'package:cherry_app/Screens/jobOverview.dart';
 import 'package:cherry_app/Widgets/homePageCard.dart';
 import 'package:cherry_app/Widgets/rawWidgets.dart';
 import 'package:cherry_app/constants/info.dart';
@@ -107,14 +108,19 @@ class homePage extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage(
-                              "assets/appLogo/appLogo${index + 1}.png"),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => jobOverview()));
+                        },
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage(
+                                "assets/appLogo/appLogo${index + 1}.png"),
+                          ),
+                          title: Text(hiringInfo[index]['name'].toString()),
+                          subtitle: Text(hiringInfo[index]['desc'].toString()),
+                          trailing: IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
                         ),
-                        title: Text(hiringInfo[index]['name'].toString()),
-                        subtitle: Text(hiringInfo[index]['desc'].toString()),
-                        trailing: IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
                       ),
                     );
                   },
