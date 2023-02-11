@@ -1,4 +1,3 @@
-import 'package:cherry_app/Screens/jobsAvailable.dart';
 import 'package:cherry_app/Widgets/homePageCard.dart';
 import 'package:cherry_app/Widgets/rawWidgets.dart';
 import 'package:cherry_app/constants/info.dart';
@@ -8,8 +7,6 @@ import 'package:cherry_app/constants/styles.dart';
 import 'package:flutter/rendering.dart';
 
 class homePage extends StatelessWidget {
-
-  
 
   @override
   Widget build(BuildContext context) {
